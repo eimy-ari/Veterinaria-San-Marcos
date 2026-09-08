@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumen de Reserva - Veterinaria San Marcos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">Veterinaria San Marcos</a>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="novedades.html">Novedades</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="seleccion-container">
+      <h1>Servicios Seleccionados</h1>
+      <p>Revisa el detalle de los servicios que has añadido a tu solicitud de atención.</p>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Servicio</th>
+              <th>Descripción</th>
+              <th>Precio Estimado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="carrito-list">
+            <!-- Renderizado dinámico desde app.js con LocalStorage -->
+            <tr>
+              <td colspan="4" style="text-align: center; color: var(--gray-text);">
+                No has seleccionado ningún servicio aún. <a href="catalogo.html">Volver al catálogo</a>.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="resumen-total" style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <h3>Total Estimado: <span id="total-precio">$0</span></h3>
+        <div class="acciones-reserva" style="display: flex; gap: 1rem;">
+          <button id="btn-vaciar" class="btn btn-danger">Vaciar Selección</button>
+          <button id="btn-confirmar" class="btn">Confirmar Reserva</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Veterinaria San Marcos. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

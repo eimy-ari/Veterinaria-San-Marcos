@@ -1,0 +1,526 @@
+/* ==========================================================================
+   VETERINARIA SAN MARCOS - ESTILOS GLOBALES
+   Tema: Profesional, Limpio, Amigable con Mascotas
+   ========================================================================== */
+
+:root {
+  /* Paleta de Colores Principal */
+  --primary: #0d9488;             /* Verde menta / Teal (Salud & Frescura) */
+  --primary-hover: #0f766e;
+  --primary-light: #ccfbf1;
+  --secondary: #1e3a8a;           /* Azul Profundo (Confianza) */
+  --secondary-light: #dbeafe;
+  --accent: #f59e0b;              /* Ámbar / Dorado (Aviso / Destacados) */
+  --accent-hover: #d97706;
+  --danger: #ef4444;
+  --danger-light: #fee2e2;
+  --success: #10b981;
+  --success-light: #d1fae5;
+  
+  /* Fondos y Textos */
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  
+  /* Bordes & Sombras */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --transition: all 0.25s ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   Reset & Tipografía Base
+   -------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+h1, h2, h3, h4 {
+  color: var(--secondary);
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Header & Navegación Principal
+   -------------------------------------------------------------------------- */
+header {
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--primary);
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav .logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-hover);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav .logo::before {
+  content: "🐾";
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--primary-hover);
+  background-color: var(--primary-light);
+}
+
+/* --------------------------------------------------------------------------
+   Botones & Formularios Estilizados
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+}
+
+.btn-secondary:hover {
+  background-color: #1d4ed8;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  background-color: #ffffff;
+  transition: var(--transition);
+  color: var(--text-dark);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   1. INDEX.HTML (Página Principal)
+   -------------------------------------------------------------------------- */
+.hero {
+  background: linear-gradient(135deg, var(--primary-light) 0%, #e0f2fe 100%);
+  padding: 3.5rem 2rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  margin-bottom: 3rem;
+  border: 1px solid #bfe3e0;
+}
+
+.hero h1 {
+  font-size: 2.3rem;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 650px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.destacados h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--bg-card);
+  padding: 1.8rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.card h3 {
+  color: var(--primary-hover);
+}
+
+.card p {
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. CONTACTO.HTML
+   -------------------------------------------------------------------------- */
+#contacto-form-section {
+  background-color: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+}
+
+#map-container {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.contacto-info {
+  background-color: var(--secondary-light);
+  padding: 1.8rem;
+  border-radius: var(--radius-md);
+  border-left: 5px solid var(--secondary);
+}
+
+/* --------------------------------------------------------------------------
+   3. LOGIN.HTML, REGISTRO.HTML Y SELECCIÓN.HTML
+   -------------------------------------------------------------------------- */
+.auth-container,
+.seleccion-container {
+  max-width: 450px;
+  margin: 2rem auto;
+  background-color: var(--bg-card);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.auth-container h1,
+.seleccion-container h1 {
+  margin-bottom: 0.5rem;
+}
+
+.auth-container p,
+.seleccion-container p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.seleccion-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.btn-option {
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background-color: var(--bg-main);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-dark);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-option:hover {
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+  color: var(--primary-hover);
+}
+
+/* --------------------------------------------------------------------------
+   4. CATÁLOGO.HTML & NOVEDADES.HTML
+   -------------------------------------------------------------------------- */
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.novedad-card,
+.catalogo-item {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.novedad-card:hover,
+.catalogo-item:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.badge-primary { background-color: var(--primary-light); color: var(--primary-hover); }
+.badge-accent { background-color: #fef3c7; color: var(--accent-hover); }
+
+/* --------------------------------------------------------------------------
+   5. NOSOTROS.HTML
+   -------------------------------------------------------------------------- */
+.about-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.team-member {
+  background-color: var(--bg-card);
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--primary-light);
+}
+
+/* --------------------------------------------------------------------------
+   6. PANEL DE ADMINISTRACIÓN (admin/index.html, servicios.html, usuarios.html)
+   -------------------------------------------------------------------------- */
+.admin-container {
+  max-width: 100%;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: #f1f5f9;
+  color: var(--secondary);
+  font-weight: 700;
+  padding: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+tr:hover {
+  background-color: #f8fafc;
+}
+
+.table-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.btn-icon:hover {
+  background-color: var(--border-color);
+}
+
+/* Roles y Estados en Tablas */
+.role, .status {
+  padding: 0.25rem 0.6rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.role-cliente { background-color: #e0f2fe; color: #0369a1; }
+.role-recepcionista { background-color: #fef3c7; color: #b45309; }
+.status-activo { background-color: var(--success-light); color: #047857; }
+.status-inactivo { background-color: var(--danger-light); color: var(--danger); }
+
+/* --------------------------------------------------------------------------
+   Pie de Página (Footer)
+   -------------------------------------------------------------------------- */
+footer {
+  background-color: var(--secondary);
+  color: #cbd5e1;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design (Pantallas Pequeñas)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  nav ul {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}

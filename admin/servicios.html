@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Servicios - Veterinaria San Marcos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <header>
+        <nav>
+            <li href="../index.html"></li>
+            <li href="index.html"></li>
+            <li class="servicio" active>Servicios<li href="Usuarios"></li>
+        </nav>
+    </header>
+    <main>
+        <h1>Administrar Catalogo de servicios</h1>
+        <div>
+            <h2>Añadir Nuevo Servicio</h2>
+            <form id="add-service-form">
+                <input Nombre del Servicio type="Nombre del Servicio">
+                <input Precio (CLP) type="Precio(CLp)">
+                <input Descripcion class="Precio">Descripcion</input>
+                <button type="submit" >Añadir Servicio</button>
+            </form>
+        </div>
+        <div>
+            <h2>Servicios Existentes</h2>
+            <table id="services-table">
+                <thead>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </thead>
+            </table>
+        </div>
+    <footer>
+        <Copyright &copy; 2024 Veterinaria San Marcos. Todos los derechos reservados.></Copyright>
+    </footer>
+    </main>
+</head>
+<body>
+    <script src="../js/app.js"></script>
+    <script src="../js/admin-servicios.js"></script>
+    <script src="../js/data.js"></script>
+</body>
+</html>
